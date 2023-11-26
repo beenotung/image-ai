@@ -16,6 +16,15 @@
       .image {
         outline: 1px solid black;
       }
+      .image[data-same-name='true'] .filename {
+        color: red;
+      }
+      .image[data-same-name='true'] .filename::after {
+        content: ' (name clash)';
+      }
+      .image[data-same-size='true'] .filename::after {
+        content: ' (duplicated)';
+      }
       figure {
         margin: 0;
       }
@@ -37,18 +46,34 @@
         <figure>
           <button class="remove-btn">remove</button>
           <div>
-            <img src="https://picsum.photos/seed/54/200" />
+            <img />
           </div>
           <figcaption>
             <button class="remove-btn">remove</button>
             <span class="filename"></span>
+            <span class="size"></span>
           </figcaption>
         </figure>
       </div>
     </div>
 
+    <button id="renameNameClashButton">
+      rename
+      <span class="count">0</span>
+      name clash images
+    </button>
+    <button id="removeDuplicatedButton">
+      remove
+      <span class="count">0</span>
+      duplicated images
+    </button>
+
     <h2>Import Images</h2>
-    <button onclick="importAll()">Import All</button>
+    <button id="importButton">
+      import
+      <span class="count">0</span>
+      images
+    </button>
     <div style="width: fit-content; text-align: center; margin: 1rem 0">
       <div id="progressText">0/0</div>
       <progress id="progressBar" value="0" max="0"></progress>
