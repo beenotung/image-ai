@@ -10,3 +10,4 @@ dist/
 *.tgz
 .DS_Store
 .parcel-cache
+images/
