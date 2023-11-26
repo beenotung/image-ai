@@ -1,0 +1,22 @@
+{
+  "name": "image-ai",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "run-p main tsc:watch",
+    "main": "electron -r ts-node/register main.ts",
+    "tsc:watch": "tsc -p . --watch",
+    "test": "tsc --noEmit",
+    "build": "tsc -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "electron": "^26.6.1",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "oklab.ts": "^2.2.5"
+  }
+}
