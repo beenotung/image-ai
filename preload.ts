@@ -3,7 +3,8 @@ import { fileToArrayBuffer, fileToBase64String } from '@beenotung/tslib/file'
 import { randomUUID } from 'crypto'
 import { existsSync, mkdirSync, rename, writeFileSync } from 'fs'
 import { stat } from 'fs/promises'
-import { extname, join } from 'path'
+import { basename, extname, join } from 'path'
+import { proxy } from './proxy'
 
 window.addEventListener('DOMContentLoaded', init)
 
@@ -131,6 +132,7 @@ function init() {
         }
         let buffer = await fileToArrayBuffer(imageFile.file)
         writeFileSync(imageFile.path, Buffer.from(buffer))
+        proxy.image.push({ filename: basename(imageFile.path) })
         removeImageFile(imageFile)
         i--
         progressBar.value++

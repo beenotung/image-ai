@@ -1,0 +1,15 @@
+image
+-----
+id
+filename text unique
+
+tag
+---
+id
+name text unique
+
+image_tag
+---------
+id
+image_id fk
+tag_id fk
