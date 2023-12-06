@@ -2,6 +2,7 @@
   "name": "image-ai",
   "version": "0.0.0",
   "scripts": {
+    "rebuild": "electron-rebuild",
     "start": "run-p main tsc:watch",
     "main": "electron -r ts-node/register main.ts",
     "tsc:watch": "tsc -p . --watch",
@@ -12,6 +13,7 @@
     "db:update": "knex migrate:latest && erd-to-proxy < erd.txt > proxy.ts"
   },
   "devDependencies": {
+    "@electron/rebuild": "^3.4.1",
     "@types/integer": "^4.0.1",
     "@types/node": "^20.10.0",
     "electron": "^27.1.2",
