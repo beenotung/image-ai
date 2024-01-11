@@ -14,3 +14,6 @@ images/
 db.sqlite3
 db.sqlite3-shm
 db.sqlite3-wal
+data/
+model.json
+*.zip

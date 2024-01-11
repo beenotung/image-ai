@@ -44,6 +44,7 @@
     "knex": "^3.0.1",
     "listening-on": "^2.0.9",
     "oklab.ts": "^2.2.5",
-    "populate-env": "^2.0.0"
+    "populate-env": "^2.0.0",
+    "sharp": "^0.32.5"
   }
 }
